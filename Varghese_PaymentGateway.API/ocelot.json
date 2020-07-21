@@ -1,0 +1,26 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/values",
+      "DownstreamScheme": "http",
+      "DownstreamHttpMethods": [ "POST" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "varghesechandy-001-site1.atempurl.com",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/processpayment",
+      "UpstreamHttpMethods": [ "POST" ],
+      "DelegatingHandlers": [ "GatewayHandler" ],
+
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": true
+      }
+    } 
+  ], 
+
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:12121"
+  }
+}

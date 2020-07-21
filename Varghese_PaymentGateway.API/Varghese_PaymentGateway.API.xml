@@ -1,0 +1,792 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Varghese_PaymentGateway.API</name>
+    </assembly>
+    <members>
+        <member name="T:Varghese_PaymentGateway.API.AppDatabase.DatabaseContext.IRepositoryConnection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.AppDatabase.DatabaseContext.IRepositoryConnection.GetDataContext">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.AppDatabase.DatabaseContext.PaymentDataContext">
+            <summary>
+            Sqlight database
+            </summary>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.AppDatabase.DatabaseContext.PaymentDataContext.#ctor">
+            <summary>
+            If database file is not existed, it creates automatically.
+            </summary>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.AppDatabase.DatabaseContext.PaymentDataContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+            Please find the database file from the location below
+            </summary>
+            <param name="optionsBuilder"></param>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.AppDatabase.DatabaseContext.PaymentDataContext.PaymentProcess">
+            <summary>
+            To save all the payment process
+            </summary> 
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.AppDatabase.DatabaseContext.PaymentDataContext.LoginUsers">
+            <summary>
+            Login users for authentication.
+            </summary>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.AppDatabase.DatabaseContext.RepositoryConnection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.AppDatabase.DatabaseContext.RepositoryConnection.GetDataContext">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.AppDatabase.Entities.LoginUsers">
+            <summary>
+            Database entity for user information
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.AppDatabase.Entities.LoginUsers.UserName">
+            <summary>
+            Username
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.AppDatabase.Entities.LoginUsers.Password">
+            <summary>
+            Password
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.AppDatabase.Entities.LoginUsers.Role">
+            <summary>
+            Role (Admin / User) Admin users are only allowed to do both payment submission and reporting
+            </summary>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.AppDatabase.Entities.PaymentProcess">
+            <summary>
+            Database entity to save the payment process
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.AppDatabase.Entities.PaymentProcess.PaymentId">
+            <summary>
+            This must be generated from the aquiring bank
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.AppDatabase.Entities.PaymentProcess.CardNumber">
+            <summary>
+            Payment card number
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.AppDatabase.Entities.PaymentProcess.Name">
+            <summary>
+            Expiry date. The format should be 'MM/yyyy'
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.AppDatabase.Entities.PaymentProcess.Amount">
+            <summary>
+            Amount of payment
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.AppDatabase.Entities.PaymentProcess.Currency">
+            <summary>
+            Payment currency. This must be a string of 3 letters (GBP, USD, INR etc) 
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.AppDatabase.Entities.PaymentProcess.ResponseStatusCode">
+            <summary>
+            Response status code from the Acquiring bank
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.AppDatabase.Entities.PaymentProcess.Message">
+            <summary>
+            Message from the Acquiring bank
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.AppDatabase.Entities.PaymentProcess.PaymentDate">
+            <summary>
+            Date of payment
+            </summary>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.AppDatabase.PaymentProcessRepository.IPaymentRepository">
+            <summary>
+            Interface for a data repository
+            </summary>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.AppDatabase.PaymentProcessRepository.IPaymentRepository.AddPaymentProcessData(Varghese_PaymentGateway.API.AppDatabase.Entities.PaymentProcess,System.String@)">
+            <summary>
+            TO save payment data
+            </summary>
+            <param name="paymentProcessData"></param>
+            <param name="errorMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.AppDatabase.PaymentProcessRepository.IPaymentRepository.GetPaymentHistory(Varghese_PaymentGateway.API.Models.ResourceParameters,System.String@)">
+            <summary>
+            To retreive details of a previously made payment
+            </summary>
+            <param name="resourceParameters"></param>
+            <param name="errorMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.AppDatabase.PaymentProcessRepository.IPaymentRepository.UserLogin(System.String,System.String,System.String@)">
+            <summary>
+            To authenticate a user
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <param name="errorMsg"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.AppDatabase.PaymentProcessRepository.PaymentRepository">
+            <summary>
+            The actual implimentaion of database operations
+            </summary>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.AppDatabase.PaymentProcessRepository.PaymentRepository.#ctor(Varghese_PaymentGateway.API.AppDatabase.DatabaseContext.IRepositoryConnection)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.AppDatabase.PaymentProcessRepository.PaymentRepository.AddPaymentProcessData(Varghese_PaymentGateway.API.AppDatabase.Entities.PaymentProcess,System.String@)">
+            <summary>
+            To save the details of the payment process 
+            </summary>
+            <param name="paymentProcessData"></param>
+            <param name="errorMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.AppDatabase.PaymentProcessRepository.PaymentRepository.GetPaymentHistory(Varghese_PaymentGateway.API.Models.ResourceParameters,System.String@)">
+            <summary>
+            To retreive details of a previously made payment
+            </summary>
+            <param name="resourceParameters"></param>
+            <param name="errorMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.AppDatabase.PaymentProcessRepository.PaymentRepository.UserLogin(System.String,System.String,System.String@)">
+            <summary>
+            Authenticate a user
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <param name="errorMsg"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.AppMetrics.ApplicationMetrics">
+            <summary>
+            This feature should be improved. There is GUI to display the metrics
+            </summary>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.AppMetrics.ApplicationMetrics.CreateHistogram">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.AppMetrics.IApplicationMetrics">
+            <summary>
+            This feature needs to be improved. There is no GUI option to see the performance
+            </summary>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.AppMetrics.IApplicationMetrics.CreateHistogram">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.AuthenticationService.AuthService">
+            <summary>
+            Authentication service
+            </summary>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.AuthenticationService.AuthService.#ctor(Microsoft.Extensions.Options.IOptions{Varghese_PaymentGateway.API.Models.AppSettings},Varghese_PaymentGateway.API.AppDatabase.PaymentProcessRepository.IPaymentRepository,AutoMapper.IMapper)">
+            <summary>
+            
+            </summary>
+            <param name="_appSettings"></param>
+            <param name="_paymentRepository"></param>
+            <param name="_mapper"></param>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.AuthenticationService.AuthService.Authenticate(System.String,System.String,System.String@)">
+            <summary>
+            Authenticate a user. If authenticated, generate a token.
+            There is currently no option to add or delete users from the database
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <param name="errorMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.AuthenticationService.AuthService.IsUserAuthenticatedForPaymentProcess(System.Net.Http.HttpRequestMessage,System.Net.HttpStatusCode@,System.String@)">
+            <summary>
+            This method verifies the authentication of a payment process through Ocelot
+            </summary>
+            <param name="request"></param>
+            <param name="statusCode"></param>
+            <param name="errorMessage"></param> 
+            <returns></returns>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.AuthenticationService.IAuthService">
+            <summary>
+            Interface for Authentication Service
+            </summary>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.AuthenticationService.IAuthService.Authenticate(System.String,System.String,System.String@)">
+            <summary>
+            To generate a authentication token if successfully login
+            </summary>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.AuthenticationService.IAuthService.IsUserAuthenticatedForPaymentProcess(System.Net.Http.HttpRequestMessage,System.Net.HttpStatusCode@,System.String@)">
+            <summary>
+            Validate a user request for payment process
+            </summary>
+            <param name="request"></param>
+            <param name="statusCode"></param>
+            <param name="errorMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.AutoMapper.PaymentProcessProfile">
+            <summary>
+            Automapper
+            </summary>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.AutoMapper.PaymentProcessProfile.#ctor">
+            <summary>
+            Create Mappings
+            </summary>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.Controllers.LoginController">
+            <summary>
+            User Authentication
+            </summary>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.Controllers.LoginController.#ctor(Varghese_PaymentGateway.API.AuthenticationService.IAuthService)">
+            <summary>
+            This constructor injects the authentication service
+            </summary>
+            <param name="_authenticationService"></param>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.Controllers.LoginController.Login(Varghese_PaymentGateway.API.Models.LoginParams)">
+            <summary>
+            Please generate your JWT Token from this action. Then click on the Authorize button and Value = "Bearer "Token string.
+            </summary>
+            <param name="user"></param>
+            <returns>Login user with security Token</returns> 
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.Controllers.ProcessPaymentController">
+             <summary>
+            ******************************************************************************************************************
+            This is a mock controller for the API client. Swagger end point is not configured for the acquiring bank (Mock api)
+            The production link is http://localhost/processpayment
+            The action 'EncryptData' should be implemented in the client application
+            ******************************************************************************************************************
+             </summary>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.Controllers.ProcessPaymentController.#ctor(Varghese_PaymentGateway.API.Cryptography.ICryptography,AutoMapper.IMapper)">
+            <summary>
+             
+            </summary>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.Controllers.ProcessPaymentController.EncryptData(Varghese_PaymentGateway.API.Models.ProcessCardData)">
+            <summary>
+            Please copy and paste the response data to 'PaymentSubmission' to encrypt the data before the payment process.
+            </summary>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.Controllers.ProcessPaymentController.PaymentSubmission(Varghese_PaymentGateway.API.Models.ProcessData)">
+            <summary>
+            There are two options to either send the data encrypted or unencryted to process a payment through the payment gateway.
+            </summary>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.Controllers.ReportingController">
+            <summary>
+            Reporting
+            </summary>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.Controllers.ReportingController.#ctor(AutoMapper.IMapper,Varghese_PaymentGateway.API.AppDatabase.PaymentProcessRepository.IPaymentRepository,Varghese_PaymentGateway.API.AppMetrics.IApplicationMetrics)">
+            <summary>
+            This injects mapper and payament data repository and application metrics
+            </summary>
+            <param name="_mapper"></param>
+            <param name="_paymentRepository"></param>
+            <param name="_applicationMetrics"></param>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.Controllers.ReportingController.PaymentHistory(Varghese_PaymentGateway.API.Models.ResourceParameters)">
+            <summary>
+            To retrieve details of a previously made payment.
+            </summary>
+            <returns>PaymentHistory</returns>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.Cryptography.Cryptographi">
+            <summary>
+            To implement Encryption and Decryption
+            </summary>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.Cryptography.Cryptographi.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.DataProtection.IDataProtectionProvider)">
+            <summary>
+            Create a data protector to encrypt and decrypt a string
+            </summary>
+            <param name="_configuration"></param>
+            <param name="_protectionProvider"></param>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.Cryptography.Cryptographi.Decrypt(System.String)">
+            <summary>
+            Decrypt a string
+            </summary>
+            <param name="itemToUnProtect"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.Cryptography.Cryptographi.Encrypt(System.String)">
+            <summary>
+            Encrypt a string
+            </summary>
+            <param name="itemToProtect"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.Cryptography.ICryptography">
+            <summary>
+            To encrypt and decrypt a string
+            </summary>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.Cryptography.ICryptography.Encrypt(System.String)">
+            <summary>
+            Encryption
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.Cryptography.ICryptography.Decrypt(System.String)">
+            <summary>
+            Decryption
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.DataValidation.ValidationConsts">
+            <summary>
+            Get all the validation constants
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.DataValidation.ValidationConsts.Instance">
+            <summary>
+            Global accessing point
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.DataValidation.ValidationConsts.CardNumber">
+            <summary>
+            CardNumber
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.DataValidation.ValidationConsts.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.DataValidation.ValidationConsts.Expiry">
+            <summary>
+            Expiry
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.DataValidation.ValidationConsts.Amount">
+            <summary>
+            Amount
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.DataValidation.ValidationConsts.Currency">
+            <summary>
+            Currency
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.DataValidation.ValidationConsts.Security">
+            <summary>
+            Security
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.DataValidation.ValidationConsts.IsEncrypted">
+            <summary>
+            isEncrypted
+            </summary>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.DataValidation.ValidationConsts.DataChecker">
+            <summary>
+            To check all the required fields
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.DelegatingHandlers.GatewayHandler">
+            <summary>
+            The request to ocelot will be handled here before sending to acquiring bank
+            </summary>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.Models.AppSettings">
+            <summary>
+            To get the secret key
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.AppSettings.Key">
+            <summary>
+            I am using this key for both authentication and Encryption
+            </summary>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.Models.LoginParams">
+            <summary>
+            To display appropriate fields for the login UI
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.LoginParams.Username">
+            <summary>
+            Username 
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.LoginParams.Password">
+            <summary>
+            password
+            </summary>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.Models.PaymentData">
+            <summary>
+            All the information regarding the payment process including the request data and the response data 
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.PaymentData.PaymentId">
+            <summary>
+            This should be generated from the Aquired bank
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.PaymentData.CardNumber">
+            <summary>
+            Payment card number. There is an option to encrypt this field
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.PaymentData.Name">
+            <summary>
+            Payment card holder name
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.PaymentData.Expiry">
+            <summary>
+            Expiry date. The format should be 'MM/yyyy'
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.PaymentData.Amount">
+            <summary>
+            Amount to pay
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.PaymentData.Currency">
+            <summary>
+            Payment currency. This must be three letters long (GBP, USD, INR etc) 
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.PaymentData.Security">
+            <summary>
+            Security code CVV
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.PaymentData.ResponseStatusCode">
+            <summary>
+            Response status code from the Acquiring bank
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.PaymentData.Message">
+            <summary>
+            Message from the Acquiring bank
+            </summary>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.Models.PaymentHistory">
+            <summary>
+            To retrieve the details of a previously made payment
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.PaymentHistory.PaymentId">
+            <summary>
+            Unique Id generated from the Acquiring bank
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.PaymentHistory.CardNumber">
+            <summary>
+            Payment card number 
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.PaymentHistory.Name">
+            <summary>
+            Payment card holder name
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.PaymentHistory.Amount">
+            <summary>
+            Paid Amount
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.PaymentHistory.ResponseStatusCode">
+            <summary>
+            Response status code from the Acquiring bank
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.PaymentHistory.Message">
+            <summary>
+            Message from the Acquiring bank
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.PaymentHistory.PaymentDate">
+            <summary>
+            Paid date
+            </summary>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.Models.ProcessCardData">
+            <summary>
+            Send data to encrypt. An action called 'EncryptData' receives these information for encryption. 
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.ProcessCardData.CardNumber">
+            <summary>
+            Payment card number 
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.ProcessCardData.Name">
+            <summary>
+            Payment card holder name
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.ProcessCardData.Expiry">
+            <summary>
+            Expiry date. The format should be 'MM/yyyy'
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.ProcessCardData.Amount">
+            <summary>
+            Paid Amount
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.ProcessCardData.Currency">
+            <summary>
+            Payment currency. This must be three letters long (GBP, USD, INR etc) 
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.ProcessCardData.Security">
+            <summary>
+            Security code CVV
+            </summary>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.Models.ProcessData">
+            <summary>
+            This information must be submitted to the payment gateway
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.ProcessData.CardNumber">
+            <summary>
+            Payment card number. There is an option to encrypt this field
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.ProcessData.Name">
+            <summary>
+            Payment card holder name
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.ProcessData.Expiry">
+            <summary>
+            Expiry date. The format should be 'MM/yyyy'
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.ProcessData.Amount">
+            <summary>
+            Amount to pay
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.ProcessData.Currency">
+            <summary>
+            Payment currency. This must be three letters long (GBP, USD, INR etc) 
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.ProcessData.Security">
+            <summary>
+            Security code CVV
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.ProcessData.isencrypted">
+            <summary>
+            Option to submit the data either encrypted or plain
+            </summary>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.Models.ResourceParameters">
+            <summary>
+            This is for pagination
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.ResourceParameters.SearchQuery">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.ResourceParameters.PageNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Varghese_PaymentGateway.API.Models.ResourceParameters._pageSize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.ResourceParameters.PageSize">
+             <summary>
+            Page size cannot exceed more than 20. This is to improve the performance 
+             </summary>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.Models.User">
+            <summary>
+            Login User
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.User.Username">
+            <summary>
+            Username 
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.User.Password">
+            <summary>
+            password
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.User.Role">
+            <summary>
+            Role
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Models.User.Token">
+            <summary>
+            Role
+            </summary>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.Pagination.PagedList`1">
+            <summary>
+            Pagination
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Pagination.PagedList`1.CurrentPage">
+            <summary>
+            CurrentPage
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Pagination.PagedList`1.TotalPages">
+            <summary>
+            TotalPages
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Pagination.PagedList`1.PageSize">
+            <summary>
+            PageSize
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Pagination.PagedList`1.TotalCount">
+            <summary>
+            TotalCount
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Pagination.PagedList`1.HasPrevious">
+            <summary>
+            HasPrevious
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Pagination.PagedList`1.HasNext">
+            <summary>
+            HasNext
+            </summary>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.Pagination.PagedList`1.#ctor(System.Collections.Generic.List{`0},System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="items"></param>
+            <param name="count"></param>
+            <param name="pageNumber"></param>
+            <param name="pageSize"></param>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.Pagination.PagedList`1.Create(System.Linq.IQueryable{`0},System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="source"></param>
+            <param name="pageNumber"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.Pagination.ResourceUriType">
+            <summary>
+            ResourceUriType
+            </summary>
+        </member>
+        <member name="F:Varghese_PaymentGateway.API.Pagination.ResourceUriType.PreviousPage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Varghese_PaymentGateway.API.Pagination.ResourceUriType.NextPage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.Program.Main(System.String[])">
+            <summary>
+            Starting point
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            CreateHostBuilder
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Varghese_PaymentGateway.API.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Varghese_PaymentGateway.API.Startup.Configuration">
+            <summary>
+            To read the key for authentication
+            </summary>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+             <summary>
+            Startup
+             </summary>
+             <param name="configuration"></param>
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param> 
+        </member>
+        <member name="M:Varghese_PaymentGateway.API.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param> 
+        </member>
+        <member name="T:Varghese_PaymentGateway.Filters.API.HideControllersFilter">
+            <summary>
+            This is used to hide unneccessary options in Swagger
+            </summary>
+        </member>
+    </members>
+</doc>
