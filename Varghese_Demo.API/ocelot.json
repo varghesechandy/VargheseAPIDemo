@@ -18,9 +18,9 @@
         "AllowAutoRedirect": true
       }
     } 
-  ], 
+  ],
 
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:12121"
+    "BaseUrl": "http://localhost:55555"
   }
 }
