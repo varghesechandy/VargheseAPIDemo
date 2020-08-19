@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Varghese_PaymentGateway.API\Varghese_Demo.API.csproj" />
+    <ProjectReference Include="..\Varghese_Demo.API\Varghese_Demo.API.csproj" />
   </ItemGroup>
 
 </Project>
