@@ -16,7 +16,7 @@
       },
       "applicationUrl": "http://localhost:12121"
     },
-    "Varghese_PaymentGateway.API": {
+    "Varghese_Demo.API": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "weatherforecast",

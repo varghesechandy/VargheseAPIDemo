@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Varghese_PaymentGateway.API.AppDatabase.Entities
+namespace Varghese_Demo.API.AppDatabase.Entities
 {
     /// <summary>
     /// Database entity to save the payment process

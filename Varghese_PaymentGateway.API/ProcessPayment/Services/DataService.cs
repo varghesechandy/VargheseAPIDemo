@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc; 
 using System.Net.Http;
 using System.Net; 
-using Varghese_PaymentGateway.API.Models;
-using Varghese_PaymentGateway.API.AppDatabase.PaymentProcessRepository;
+using Varghese_Demo.API.Models;
+using Varghese_Demo.API.AppDatabase.PaymentProcessRepository;
 using AutoMapper; 
-using Varghese_PaymentGateway.API.AppDatabase.Entities; 
+using Varghese_Demo.API.AppDatabase.Entities; 
 
-namespace Varghese_PaymentGateway.API.ProcessPayment.DataService
+namespace Varghese_Demo.API.ProcessPayment.DataService
 { 
     internal class DataService : IDataService
     {

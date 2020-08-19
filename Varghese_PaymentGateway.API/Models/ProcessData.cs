@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Varghese_PaymentGateway.API.Models
+namespace Varghese_Demo.API.Models
 {
     /// <summary>
     /// This information must be submitted to the payment gateway

@@ -3,7 +3,7 @@ using Moq;
 using System.Text; 
 using Xunit;
 
-namespace Varghese_PaymentGateway.API_TEST
+namespace Varghese_Demo.API_TEST
 {
     public class CryprographyTest
     {

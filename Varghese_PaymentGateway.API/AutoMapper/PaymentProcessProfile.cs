@@ -1,9 +1,9 @@
 ﻿using AutoMapper; 
 using System; 
-using Varghese_PaymentGateway.API.AppDatabase.Entities;
-using Varghese_PaymentGateway.API.Models;
+using Varghese_Demo.API.AppDatabase.Entities;
+using Varghese_Demo.API.Models;
 
-namespace Varghese_PaymentGateway.API.AutoMapper
+namespace Varghese_Demo.API.AutoMapper
 {
     /// <summary>
     /// Automapper

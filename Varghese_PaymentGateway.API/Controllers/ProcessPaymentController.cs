@@ -4,10 +4,10 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc; 
 using Prometheus;
 using System;
-using Varghese_PaymentGateway.API.Cryptography;
-using Varghese_PaymentGateway.API.Models;
+using Varghese_Demo.API.Cryptography;
+using Varghese_Demo.API.Models;
 
-namespace Varghese_PaymentGateway.API.Controllers
+namespace Varghese_Demo.API.Controllers
 {
 
     /// <summary>

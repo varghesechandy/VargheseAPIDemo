@@ -1,5 +1,5 @@
 ﻿
-namespace Varghese_PaymentGateway.API.Cryptography
+namespace Varghese_Demo.API.Cryptography
 {
     /// <summary>
     /// To encrypt and decrypt a string

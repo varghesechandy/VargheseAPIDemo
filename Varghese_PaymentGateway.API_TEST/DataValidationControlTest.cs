@@ -1,19 +1,19 @@
 using System.Runtime.CompilerServices;
 using Xunit; 
 using System.Collections.Generic; 
-using Varghese_PaymentGateway.API.Models;
+using Varghese_Demo.API.Models;
 using Moq;
-using Varghese_PaymentGateway.API.Cryptography;
-using Varghese_PaymentGateway.API.AuthenticationService;
-using Varghese_PaymentGateway.API.DataValidation;
+using Varghese_Demo.API.Cryptography;
+using Varghese_Demo.API.AuthenticationService;
+using Varghese_Demo.API.DataValidation;
 
-[assembly: InternalsVisibleTo("Varghese_PaymentGateway.API_TEST")]
-namespace Varghese_PaymentGateway.API_TEST
+[assembly: InternalsVisibleTo("Varghese_Demo.API_TEST")]
+namespace Varghese_Demo.API_TEST
 {
     public class DataValidationControlTest
     {  
-        private Mock<ICryptography> cryptography = new Mock<ICryptography>(MockBehavior.Strict);
-        private Mock<IAuthService> authService = new Mock<IAuthService>(MockBehavior.Strict);
+        private readonly Mock<ICryptography> cryptography = new Mock<ICryptography>(MockBehavior.Strict);
+        private readonly Mock<IAuthService> authService = new Mock<IAuthService>(MockBehavior.Strict);
         private readonly DataValidationControl dataValidationControl; 
         public DataValidationControlTest()
         {

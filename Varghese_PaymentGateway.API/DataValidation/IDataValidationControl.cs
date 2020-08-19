@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
-using Varghese_PaymentGateway.API.Models;
+using Varghese_Demo.API.Models;
 
-namespace Varghese_PaymentGateway.API.DataValidation
+namespace Varghese_Demo.API.DataValidation
 {
     internal interface IDataValidationControl
     {

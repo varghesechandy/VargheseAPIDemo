@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Varghese_PaymentGateway.API.Models
+namespace Varghese_Demo.API.Models
 {
     /// <summary>
     /// To retrieve the details of a previously made payment

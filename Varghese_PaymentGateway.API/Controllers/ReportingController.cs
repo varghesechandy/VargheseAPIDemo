@@ -3,14 +3,14 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc; 
 using System.Collections.Generic; 
-using Varghese_PaymentGateway.API.AppDatabase.PaymentProcessRepository;
-using Varghese_PaymentGateway.API.Models;
+using Varghese_Demo.API.AppDatabase.PaymentProcessRepository;
+using Varghese_Demo.API.Models;
 using Prometheus;
-using Varghese_PaymentGateway.API.AppMetrics;
-using Varghese_PaymentGateway.API.Pagination;
+using Varghese_Demo.API.AppMetrics;
+using Varghese_Demo.API.Pagination;
 using System;
 
-namespace Varghese_PaymentGateway.API.Controllers
+namespace Varghese_Demo.API.Controllers
 {
     /// <summary>
     /// Reporting

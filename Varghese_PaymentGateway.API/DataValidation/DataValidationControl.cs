@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using Varghese_PaymentGateway.API.DataValidation.ValidationRules; 
-using Varghese_PaymentGateway.API.Models; 
-using Varghese_PaymentGateway.API.Cryptography;
-using Varghese_PaymentGateway.API.AuthenticationService;
+using Varghese_Demo.API.DataValidation.ValidationRules; 
+using Varghese_Demo.API.Models; 
+using Varghese_Demo.API.Cryptography;
+using Varghese_Demo.API.AuthenticationService;
 using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("Varghese_PaymentGateway.API_TEST")]
-namespace Varghese_PaymentGateway.API.DataValidation
+[assembly: InternalsVisibleTo("Varghese_Demo.API_TEST")]
+namespace Varghese_Demo.API.DataValidation
 {
     internal class DataValidationControl : IDataValidationControl
     { 

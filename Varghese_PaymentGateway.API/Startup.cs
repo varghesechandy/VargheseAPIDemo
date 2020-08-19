@@ -5,26 +5,27 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting; 
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
-using Varghese_PaymentGateway.API.DataValidation; 
-using Varghese_PaymentGateway.API.DelegatingHandlers; 
-using Varghese_PaymentGateway.API.ProcessPayment.DataValidation;
-using Varghese_PaymentGateway.API.ProcessPayment.DataService;
-using Varghese_PaymentGateway.API.AppDatabase.PaymentProcessRepository;
+using Varghese_Demo.API.DataValidation; 
+using Varghese_Demo.API.DelegatingHandlers; 
+using Varghese_Demo.API.ProcessPayment.DataValidation;
+using Varghese_Demo.API.ProcessPayment.DataService;
+using Varghese_Demo.API.AppDatabase.PaymentProcessRepository;
 using AutoMapper;
-using Varghese_PaymentGateway.API.AutoMapper; 
+using Varghese_Demo.API.AutoMapper; 
 using Microsoft.OpenApi.Models;
-using Varghese_PaymentGateway.API.Models;
+using Varghese_Demo.API.Models;
 using System.Text; 
 using Microsoft.IdentityModel.Tokens;
-using Varghese_PaymentGateway.API.AuthenticationService;
+using Varghese_Demo.API.AuthenticationService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Prometheus; 
-using Varghese_PaymentGateway.API.Cryptography;
-using Varghese_PaymentGateway.API.AppMetrics;
+using Varghese_Demo.API.Cryptography;
+using Varghese_Demo.API.AppMetrics;
 using Varghese_PaymentGateway.Filters.API;
-using Varghese_PaymentGateway.API.AppDatabase.DatabaseContext;
+using Varghese_Demo.API.AppDatabase.DatabaseContext;
+using Varghese_Demo.API.AppDatabase.UsersRepository;
 
-namespace Varghese_PaymentGateway.API
+namespace Varghese_Demo.API
 {
     /// <summary>
     /// 
@@ -59,13 +60,14 @@ namespace Varghese_PaymentGateway.API
 
             services.AddSingleton(mapper);
             services.AddSingleton<IProcessValidation, ProcessValidation>().
-                     AddSingleton<IDataService,DataService>().
+                     AddSingleton<IDataService, DataService>().
                      AddSingleton<IDataValidationControl, DataValidationControl>().
-                     AddSingleton<IPaymentRepository,PaymentRepository>().
+                     AddSingleton<IPaymentRepository, PaymentRepository>().
                      AddSingleton<IAuthService, AuthService>().
-                     AddSingleton<ICryptography,Cryptographi>().
-                     AddSingleton<IApplicationMetrics,ApplicationMetrics>()
-                     .AddSingleton<IRepositoryConnection,RepositoryConnection>(); 
+                     AddSingleton<ICryptography, Cryptographi>().
+                     AddSingleton<IApplicationMetrics, ApplicationMetrics>().
+                     AddSingleton<IRepositoryConnection, RepositoryConnection>().
+                     AddSingleton<IUsersRepository, UsersRepository>();
 
             services.AddOcelot().AddDelegatingHandler<GatewayHandler>(true);  
 
@@ -111,7 +113,7 @@ namespace Varghese_PaymentGateway.API
                       new string[] { }
                     }
                   });
-                c.IncludeXmlComments(System.AppDomain.CurrentDomain.BaseDirectory + @"Varghese_PaymentGateway.API.xml"); 
+                c.IncludeXmlComments(System.AppDomain.CurrentDomain.BaseDirectory + @"Varghese_Demo.API.xml"); 
             });
 
             //JWT Authentication

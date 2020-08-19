@@ -10,10 +10,11 @@ using System.Net.Http;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.Text;
-using Varghese_PaymentGateway.API.AppDatabase.PaymentProcessRepository;
-using Varghese_PaymentGateway.API.Models;
+using Varghese_Demo.API.AppDatabase.PaymentProcessRepository;
+using Varghese_Demo.API.AppDatabase.UsersRepository;
+using Varghese_Demo.API.Models;
 
-namespace Varghese_PaymentGateway.API.AuthenticationService
+namespace Varghese_Demo.API.AuthenticationService
 {
     /// <summary>
     /// Authentication service
@@ -22,6 +23,7 @@ namespace Varghese_PaymentGateway.API.AuthenticationService
     {
         private readonly AppSettings appSettings;
         private readonly IPaymentRepository paymentRepository;
+        private readonly IUsersRepository userRepository;
         private readonly IMapper mapper;
         private static readonly NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
         /// <summary>
@@ -29,11 +31,13 @@ namespace Varghese_PaymentGateway.API.AuthenticationService
         /// </summary>
         /// <param name="_appSettings"></param>
         /// <param name="_paymentRepository"></param>
+        /// <param name="_usersRepository"></param>
         /// <param name="_mapper"></param>
-        public AuthService(IOptions<AppSettings> _appSettings, IPaymentRepository _paymentRepository, IMapper _mapper)
+        public AuthService(IOptions<AppSettings> _appSettings, IPaymentRepository _paymentRepository, IUsersRepository _usersRepository, IMapper _mapper)
         {
             appSettings = _appSettings.Value;
             paymentRepository = _paymentRepository;
+            userRepository = _usersRepository;
             mapper = _mapper;
         } 
 
@@ -47,7 +51,7 @@ namespace Varghese_PaymentGateway.API.AuthenticationService
         /// <returns></returns>
         public User Authenticate(string username, string password, out string errorMessage)
         { 
-            var databaseUser = paymentRepository.UserLogin(username, password, out errorMessage);
+            var databaseUser = userRepository.UserLogin(username, password, out errorMessage);
             var user = mapper.Map<User>(databaseUser);
             if (user == null)
             {

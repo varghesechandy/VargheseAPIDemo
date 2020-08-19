@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>C:\Developments\Checkout_Final\Varghese_PaymentGateway.API\Varghese_PaymentGateway.API\Varghese_PaymentGateway.API.xml</DocumentationFile>
+    <DocumentationFile>C:\Developments\Checkout_Final\Varghese_Demo.API\Varghese_Demo.API\Varghese_Demo.API.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,4 +1,4 @@
-﻿namespace Varghese_PaymentGateway.API.Models
+﻿namespace Varghese_Demo.API.Models
 {
     /// <summary>
     /// To get the secret key

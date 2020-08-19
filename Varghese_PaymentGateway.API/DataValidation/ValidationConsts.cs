@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic; 
 
-namespace Varghese_PaymentGateway.API.DataValidation
+namespace Varghese_Demo.API.DataValidation
 {
     /// <summary>
     /// Get all the validation constants

@@ -1,8 +1,8 @@
 ﻿using System.Net;
 using System.Net.Http; 
-using Varghese_PaymentGateway.API.Models;
+using Varghese_Demo.API.Models;
 
-namespace Varghese_PaymentGateway.API.AuthenticationService
+namespace Varghese_Demo.API.AuthenticationService
 {
     /// <summary>
     /// Interface for Authentication Service

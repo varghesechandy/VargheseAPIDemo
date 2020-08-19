@@ -1,5 +1,5 @@
 ﻿
-namespace Varghese_PaymentGateway.API.Pagination
+namespace Varghese_Demo.API.Pagination
 {
     /// <summary>
     /// ResourceUriType

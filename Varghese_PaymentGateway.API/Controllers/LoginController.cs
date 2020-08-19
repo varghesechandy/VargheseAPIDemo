@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc; 
-using Varghese_PaymentGateway.API.AuthenticationService;
-using Varghese_PaymentGateway.API.Models; 
+using Varghese_Demo.API.AuthenticationService;
+using Varghese_Demo.API.Models; 
 
-namespace Varghese_PaymentGateway.API.Controllers
+namespace Varghese_Demo.API.Controllers
 {
     /// <summary>
     /// User Authentication
@@ -34,7 +34,7 @@ namespace Varghese_PaymentGateway.API.Controllers
             if (loginUser == null)
             {
                 logger.Error(errorMessage);
-                return BadRequest(new { Message = errorMessage });
+                return Unauthorized(new { Message = errorMessage });
             }
              
             return Ok(loginUser);

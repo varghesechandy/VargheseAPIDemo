@@ -5,17 +5,17 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["Varghese_PaymentGateway.API/Varghese_PaymentGateway.API.csproj", "Varghese_PaymentGateway.API/"]
-RUN dotnet restore "Varghese_PaymentGateway.API/Varghese_PaymentGateway.API.csproj"
+COPY ["Varghese_Demo.API/Varghese_Demo.API.csproj", "Varghese_Demo.API/"]
+RUN dotnet restore "Varghese_Demo.API/Varghese_Demo.API.csproj"
 COPY . . 
-WORKDIR "/src/Varghese_PaymentGateway.API"
-RUN dotnet build "Varghese_PaymentGateway.API.csproj" -c Release -o /app/build
+WORKDIR "/src/Varghese_Demo.API"
+RUN dotnet build "Varghese_Demo.API.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Varghese_PaymentGateway.API.csproj" -c Release -o /app/publish
+RUN dotnet publish "Varghese_Demo.API.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 EXPOSE 12121
-ENTRYPOINT ["dotnet", "Varghese_PaymentGateway.API.dll"]
+ENTRYPOINT ["dotnet", "Varghese_Demo.API.dll"]

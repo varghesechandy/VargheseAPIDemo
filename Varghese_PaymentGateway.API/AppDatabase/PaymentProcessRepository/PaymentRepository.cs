@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System; 
 using System.Linq;
-using Varghese_PaymentGateway.API.AppDatabase.DatabaseContext;
-using Varghese_PaymentGateway.API.AppDatabase.Entities;
-using Varghese_PaymentGateway.API.Models;
-using Varghese_PaymentGateway.API.Pagination;
+using Varghese_Demo.API.AppDatabase.DatabaseContext;
+using Varghese_Demo.API.AppDatabase.Entities;
+using Varghese_Demo.API.Models;
+using Varghese_Demo.API.Pagination;
 
-namespace Varghese_PaymentGateway.API.AppDatabase.PaymentProcessRepository
+namespace Varghese_Demo.API.AppDatabase.PaymentProcessRepository
 {
     /// <summary>
     /// The actual implimentaion of database operations
@@ -73,31 +73,6 @@ namespace Varghese_PaymentGateway.API.AppDatabase.PaymentProcessRepository
                 errorMessage = ex.ToString();
                 return null;
             } 
-        }
-
-        /// <summary>
-        /// Authenticate a user
-        /// </summary>
-        /// <param name="username"></param>
-        /// <param name="password"></param>
-        /// <param name="errorMsg"></param>
-        /// <returns></returns>
-        public LoginUsers UserLogin(string username, string password, out string errorMsg)
-        {
-            errorMsg = string.Empty;
-            try
-            { 
-                var usr = context.LoginUsers.Where(u => u.UserName == username && u.Password == password).FirstOrDefault();                
-                if(usr!=null)
-                    return usr; 
-            }
-            catch (Exception ex)
-            {
-                errorMsg = ex.ToString();
-                return null;
-            }
-
-            return null; ;
-        }
+        } 
     }
 }

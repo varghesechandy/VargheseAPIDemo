@@ -1,8 +1,8 @@
 ﻿using System.Linq; 
 using System.Text.RegularExpressions;
-using Varghese_PaymentGateway.API.Cryptography;
+using Varghese_Demo.API.Cryptography;
 
-namespace Varghese_PaymentGateway.API.DataValidation.ValidationRules
+namespace Varghese_Demo.API.DataValidation.ValidationRules
 {
     internal class CreditCardNumberValidator : IValidationRules
     { 

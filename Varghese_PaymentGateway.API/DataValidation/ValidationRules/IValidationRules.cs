@@ -1,6 +1,6 @@
-﻿using Varghese_PaymentGateway.API.Cryptography;
+﻿using Varghese_Demo.API.Cryptography;
 
-namespace Varghese_PaymentGateway.API.DataValidation.ValidationRules
+namespace Varghese_Demo.API.DataValidation.ValidationRules
 {
     internal interface IValidationRules
     {

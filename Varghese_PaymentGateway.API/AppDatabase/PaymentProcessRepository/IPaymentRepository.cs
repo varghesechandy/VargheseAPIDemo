@@ -1,8 +1,8 @@
-﻿using Varghese_PaymentGateway.API.AppDatabase.Entities;
-using Varghese_PaymentGateway.API.Models;
-using Varghese_PaymentGateway.API.Pagination;
+﻿using Varghese_Demo.API.AppDatabase.Entities;
+using Varghese_Demo.API.Models;
+using Varghese_Demo.API.Pagination;
 
-namespace Varghese_PaymentGateway.API.AppDatabase.PaymentProcessRepository
+namespace Varghese_Demo.API.AppDatabase.PaymentProcessRepository
 {
     /// <summary>
     /// Interface for a data repository
@@ -22,15 +22,6 @@ namespace Varghese_PaymentGateway.API.AppDatabase.PaymentProcessRepository
         /// <param name="resourceParameters"></param>
         /// <param name="errorMessage"></param>
         /// <returns></returns>
-        PagedList<PaymentProcess> GetPaymentHistory(ResourceParameters resourceParameters, out string errorMessage);
-
-        /// <summary>
-        /// To authenticate a user
-        /// </summary>
-        /// <param name="username"></param>
-        /// <param name="password"></param>
-        /// <param name="errorMsg"></param>
-        /// <returns></returns>
-        LoginUsers UserLogin(string username, string password, out string errorMsg);
+        PagedList<PaymentProcess> GetPaymentHistory(ResourceParameters resourceParameters, out string errorMessage); 
     }
 }

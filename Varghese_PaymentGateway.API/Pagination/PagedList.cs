@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq; 
 
-namespace Varghese_PaymentGateway.API.Pagination
+namespace Varghese_Demo.API.Pagination
 {
     /// <summary>
     /// Pagination

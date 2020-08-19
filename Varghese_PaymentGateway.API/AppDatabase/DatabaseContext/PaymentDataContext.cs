@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Runtime.CompilerServices;
-using Varghese_PaymentGateway.API.AppDatabase.Entities;
+using Varghese_Demo.API.AppDatabase.Entities;
 
-[assembly: InternalsVisibleTo("Varghese_PaymentGateway.API_TEST")]
-namespace Varghese_PaymentGateway.API.AppDatabase.DatabaseContext
+[assembly: InternalsVisibleTo("Varghese_Demo.API_TEST")]
+namespace Varghese_Demo.API.AppDatabase.DatabaseContext
 {
     /// <summary>
     /// Sqlight database

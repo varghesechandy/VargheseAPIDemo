@@ -4,7 +4,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
 
-namespace Varghese_PaymentGateway.API
+namespace Varghese_Demo.API
 {
     /// <summary>
     /// 

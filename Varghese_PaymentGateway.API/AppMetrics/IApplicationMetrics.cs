@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Varghese_PaymentGateway.API.AppMetrics
+namespace Varghese_Demo.API.AppMetrics
 {
     /// <summary>
     /// This feature needs to be improved. There is no GUI option to see the performance

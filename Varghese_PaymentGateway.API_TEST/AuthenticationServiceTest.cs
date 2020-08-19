@@ -3,20 +3,21 @@ using Microsoft.Extensions.Options;
 using Moq;
 using System;
 using System.Net;
-using System.Net.Http;
-using Varghese_PaymentGateway.API.AppDatabase.DatabaseContext;
-using Varghese_PaymentGateway.API.AppDatabase.Entities;
-using Varghese_PaymentGateway.API.AppDatabase.PaymentProcessRepository;
-using Varghese_PaymentGateway.API.AuthenticationService;
-using Varghese_PaymentGateway.API.Models;
+using System.Net.Http; 
+using Varghese_Demo.API.AppDatabase.Entities;
+using Varghese_Demo.API.AppDatabase.PaymentProcessRepository;
+using Varghese_Demo.API.AuthenticationService;
+using Varghese_Demo.API.Models;
+using Varghese_Demo.API.AppDatabase.UsersRepository;
 using Xunit;
 
-namespace Varghese_PaymentGateway.API_TEST
+namespace Varghese_Demo.API_TEST
 {
     public class AuthenticationServiceTest
     { 
         private readonly Mock<IOptions<AppSettings>> appSettings = new Mock<IOptions<AppSettings>>();
         private readonly Mock<IPaymentRepository> paymentRepository = new Mock<IPaymentRepository>();
+        private readonly Mock<IUsersRepository> userRepository = new Mock<IUsersRepository>();
         private readonly Mock<IMapper> mapper = new Mock<IMapper>();
         private readonly IAuthService authService;  
         public AuthenticationServiceTest()
@@ -25,14 +26,14 @@ namespace Varghese_PaymentGateway.API_TEST
             var retValue = string.Empty;
             var loginUser = new LoginUsers { UserName = "userreporting", Password = "password123", Role = "User" };
             var user = new User { Username = "userreporting", Password = "password123", Role = "User" };
-            paymentRepository.Setup(s => s.UserLogin("userreporting", "password123", out retValue)).Returns(loginUser);
+            userRepository.Setup(s => s.UserLogin("userreporting", "password123", out retValue)).Returns(loginUser);
             mapper.Setup(s => s.Map<User>(loginUser)).Returns(user);
             
             //Mock Configuration for appsettings key
             var appKeySettings = new AppSettings() { Key = "varghesechandypallickaparampil682884" };
             appSettings.Setup(app => app.Value).Returns(appKeySettings);
 
-            authService = new AuthService(appSettings.Object, paymentRepository.Object, mapper.Object); 
+            authService = new AuthService(appSettings.Object, paymentRepository.Object, userRepository.Object, mapper.Object); 
         }
 
         [Fact]

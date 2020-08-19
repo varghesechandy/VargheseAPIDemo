@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.Configuration; 
-using Varghese_PaymentGateway.API.Models;
+using Varghese_Demo.API.Models;
 
-namespace Varghese_PaymentGateway.API.Cryptography
+namespace Varghese_Demo.API.Cryptography
 {
     /// <summary>
     /// To implement Encryption and Decryption

@@ -1,7 +1,7 @@
 ﻿using System.Net.Http;
-using Varghese_PaymentGateway.API.Models;
+using Varghese_Demo.API.Models;
 
-namespace Varghese_PaymentGateway.API.ProcessPayment.DataService
+namespace Varghese_Demo.API.ProcessPayment.DataService
 {
     internal interface IDataService
     {

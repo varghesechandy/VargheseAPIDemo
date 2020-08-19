@@ -1,6 +1,6 @@
 ﻿using Prometheus; 
 
-namespace Varghese_PaymentGateway.API.AppMetrics
+namespace Varghese_Demo.API.AppMetrics
 {
     /// <summary>
     /// This feature should be improved. There is GUI to display the metrics
