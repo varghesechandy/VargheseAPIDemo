@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations; 
 
-namespace Varghese_Demo.API.Models
+namespace CodeDemo.API.Models
 {
     /// <summary>
     /// All the information regarding the payment process including the request data and the response data 

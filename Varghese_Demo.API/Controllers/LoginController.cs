@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc; 
-using Varghese_Demo.API.AuthenticationService;
-using Varghese_Demo.API.Models; 
+using CodeDemo.API.AuthenticationService;
+using CodeDemo.API.Models; 
 
-namespace Varghese_Demo.API.Controllers
+namespace CodeDemo.API.Controllers
 {
     /// <summary>
     /// User Authentication

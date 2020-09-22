@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using Varghese_Demo.API.DataValidation.ValidationRules; 
-using Varghese_Demo.API.Models; 
-using Varghese_Demo.API.Cryptography;
-using Varghese_Demo.API.AuthenticationService;
+using CodeDemo.API.DataValidation.ValidationRules; 
+using CodeDemo.API.Models; 
+using CodeDemo.API.Cryptography;
+using CodeDemo.API.AuthenticationService;
 using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("Varghese_Demo.API_TEST")]
-namespace Varghese_Demo.API.DataValidation
+[assembly: InternalsVisibleTo("CodeDemo.API_TEST")]
+namespace CodeDemo.API.DataValidation
 {
     internal class DataValidationControl : IDataValidationControl
     { 

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Varghese_Demo.API.AppMetrics
+namespace CodeDemo.API.AppMetrics
 {
     /// <summary>
     /// This feature needs to be improved. There is no GUI option to see the performance

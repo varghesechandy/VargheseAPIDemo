@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.Configuration; 
-using Varghese_Demo.API.Models;
+using CodeDemo.API.Models;
 
-namespace Varghese_Demo.API.Cryptography
+namespace CodeDemo.API.Cryptography
 {
     /// <summary>
     /// To implement Encryption and Decryption

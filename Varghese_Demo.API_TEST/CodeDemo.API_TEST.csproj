@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Varghese_Demo.API\Varghese_Demo.API.csproj" />
+    <ProjectReference Include="..\Varghese_Demo.API\CodeDemo.API.csproj" />
   </ItemGroup>
 
 </Project>

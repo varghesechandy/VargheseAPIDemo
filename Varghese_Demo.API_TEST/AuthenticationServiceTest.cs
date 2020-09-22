@@ -4,14 +4,14 @@ using Moq;
 using System;
 using System.Net;
 using System.Net.Http; 
-using Varghese_Demo.API.AppDatabase.Entities;
-using Varghese_Demo.API.AppDatabase.PaymentProcessRepository;
-using Varghese_Demo.API.AuthenticationService;
-using Varghese_Demo.API.Models;
-using Varghese_Demo.API.AppDatabase.UsersRepository;
+using CodeDemo.API.AppDatabase.Entities;
+using CodeDemo.API.AppDatabase.PaymentProcessRepository;
+using CodeDemo.API.AuthenticationService;
+using CodeDemo.API.Models;
+using CodeDemo.API.AppDatabase.UsersRepository;
 using Xunit;
 
-namespace Varghese_Demo.API_TEST
+namespace CodeDemo.API_TEST
 {
     public class AuthenticationServiceTest
     { 

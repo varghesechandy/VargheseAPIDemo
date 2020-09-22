@@ -4,10 +4,10 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc; 
 using Prometheus;
 using System;
-using Varghese_Demo.API.Cryptography;
-using Varghese_Demo.API.Models;
+using CodeDemo.API.Cryptography;
+using CodeDemo.API.Models;
 
-namespace Varghese_Demo.API.Controllers
+namespace CodeDemo.API.Controllers
 {
 
     /// <summary>

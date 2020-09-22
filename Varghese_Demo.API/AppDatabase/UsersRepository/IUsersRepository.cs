@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Varghese_Demo.API.AppDatabase.Entities;
+using CodeDemo.API.AppDatabase.Entities;
 
-namespace Varghese_Demo.API.AppDatabase.UsersRepository
+namespace CodeDemo.API.AppDatabase.UsersRepository
 {
     /// <summary>
     /// 

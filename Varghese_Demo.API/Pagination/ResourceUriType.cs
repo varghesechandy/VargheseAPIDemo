@@ -1,5 +1,5 @@
 ﻿
-namespace Varghese_Demo.API.Pagination
+namespace CodeDemo.API.Pagination
 {
     /// <summary>
     /// ResourceUriType

@@ -1,6 +1,6 @@
 ﻿using Prometheus; 
 
-namespace Varghese_Demo.API.AppMetrics
+namespace CodeDemo.API.AppMetrics
 {
     /// <summary>
     /// This feature should be improved. There is GUI to display the metrics

@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http; 
-using Varghese_Demo.API.DataValidation;
-using Varghese_Demo.API.Models;
+using CodeDemo.API.DataValidation;
+using CodeDemo.API.Models;
 
-namespace Varghese_Demo.API.ProcessPayment.DataValidation
+namespace CodeDemo.API.ProcessPayment.DataValidation
 {
     internal class ProcessValidation : IProcessValidation
     {

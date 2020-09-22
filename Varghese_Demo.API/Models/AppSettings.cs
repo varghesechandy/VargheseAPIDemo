@@ -1,4 +1,4 @@
-﻿namespace Varghese_Demo.API.Models
+﻿namespace CodeDemo.API.Models
 {
     /// <summary>
     /// To get the secret key

@@ -3,14 +3,14 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc; 
 using System.Collections.Generic; 
-using Varghese_Demo.API.AppDatabase.PaymentProcessRepository;
-using Varghese_Demo.API.Models;
+using CodeDemo.API.AppDatabase.PaymentProcessRepository;
+using CodeDemo.API.Models;
 using Prometheus;
-using Varghese_Demo.API.AppMetrics;
-using Varghese_Demo.API.Pagination;
+using CodeDemo.API.AppMetrics;
+using CodeDemo.API.Pagination;
 using System;
 
-namespace Varghese_Demo.API.Controllers
+namespace CodeDemo.API.Controllers
 {
     /// <summary>
     /// Reporting

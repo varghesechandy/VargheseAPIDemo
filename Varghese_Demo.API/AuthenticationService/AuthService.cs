@@ -10,11 +10,11 @@ using System.Net.Http;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.Text;
-using Varghese_Demo.API.AppDatabase.PaymentProcessRepository;
-using Varghese_Demo.API.AppDatabase.UsersRepository;
-using Varghese_Demo.API.Models;
+using CodeDemo.API.AppDatabase.PaymentProcessRepository;
+using CodeDemo.API.AppDatabase.UsersRepository;
+using CodeDemo.API.Models;
 
-namespace Varghese_Demo.API.AuthenticationService
+namespace CodeDemo.API.AuthenticationService
 {
     /// <summary>
     /// Authentication service

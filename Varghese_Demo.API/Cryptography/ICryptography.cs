@@ -1,5 +1,5 @@
 ﻿
-namespace Varghese_Demo.API.Cryptography
+namespace CodeDemo.API.Cryptography
 {
     /// <summary>
     /// To encrypt and decrypt a string

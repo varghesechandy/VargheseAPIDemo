@@ -1,8 +1,8 @@
-﻿using Varghese_Demo.API.AppDatabase.Entities;
-using Varghese_Demo.API.Models;
-using Varghese_Demo.API.Pagination;
+﻿using CodeDemo.API.AppDatabase.Entities;
+using CodeDemo.API.Models;
+using CodeDemo.API.Pagination;
 
-namespace Varghese_Demo.API.AppDatabase.PaymentProcessRepository
+namespace CodeDemo.API.AppDatabase.PaymentProcessRepository
 {
     /// <summary>
     /// Interface for a data repository

@@ -1,5 +1,5 @@
 ﻿
-namespace Varghese_Demo.API.Models
+namespace CodeDemo.API.Models
 {
     /// <summary>
     /// Login User

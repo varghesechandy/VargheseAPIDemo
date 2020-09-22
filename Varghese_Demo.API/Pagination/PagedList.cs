@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq; 
 
-namespace Varghese_Demo.API.Pagination
+namespace CodeDemo.API.Pagination
 {
     /// <summary>
     /// Pagination

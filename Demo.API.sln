@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Varghese_Demo.API", "Varghese_Demo.API\Varghese_Demo.API.csproj", "{AE446C4E-D0AD-4596-B39A-17B875CE25F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeDemo.API", "Varghese_Demo.API\CodeDemo.API.csproj", "{AE446C4E-D0AD-4596-B39A-17B875CE25F0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Varghese_Demo.API_TEST", "Varghese_Demo.API_TEST\Varghese_Demo.API_TEST.csproj", "{80560645-99FF-4E68-9445-6B6D0C4A9689}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeDemo.API_TEST", "Varghese_Demo.API_TEST\CodeDemo.API_TEST.csproj", "{80560645-99FF-4E68-9445-6B6D0C4A9689}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

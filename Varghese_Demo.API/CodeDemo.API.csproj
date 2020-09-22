@@ -3,10 +3,11 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <UserSecretsId>1e75a649-ef69-4c23-a6ba-918188700d28</UserSecretsId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>C:\Developments\Checkout_Final\Varghese_Demo.API\Varghese_Demo.API\Varghese_Demo.API.xml</DocumentationFile>
+    <DocumentationFile>C:\Developments\Checkout_Final\CodeDemo.API\CodeDemo.API\CodeDemo.API.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

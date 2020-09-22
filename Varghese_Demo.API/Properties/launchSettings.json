@@ -16,7 +16,7 @@
       },
       "applicationUrl": "http://localhost:55555"
     },
-    "Varghese_Demo.API": {
+    "CodeDemo.API": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "weatherforecast",

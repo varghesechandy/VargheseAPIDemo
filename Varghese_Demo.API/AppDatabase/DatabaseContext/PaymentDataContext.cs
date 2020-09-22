@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Runtime.CompilerServices;
-using Varghese_Demo.API.AppDatabase.Entities;
+using CodeDemo.API.AppDatabase.Entities;
 
-[assembly: InternalsVisibleTo("Varghese_Demo.API_TEST")]
-namespace Varghese_Demo.API.AppDatabase.DatabaseContext
+[assembly: InternalsVisibleTo("CodeDemo.API_TEST")]
+namespace CodeDemo.API.AppDatabase.DatabaseContext
 {
     /// <summary>
     /// Sqlight database

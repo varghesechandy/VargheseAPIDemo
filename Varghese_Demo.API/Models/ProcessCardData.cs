@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Varghese_Demo.API.Models
+namespace CodeDemo.API.Models
 {
     /// <summary>
     /// Send data to encrypt. An action called 'EncryptData' receives these information for encryption. 

@@ -1,9 +1,9 @@
 ﻿using AutoMapper; 
 using System; 
-using Varghese_Demo.API.AppDatabase.Entities;
-using Varghese_Demo.API.Models;
+using CodeDemo.API.AppDatabase.Entities;
+using CodeDemo.API.Models;
 
-namespace Varghese_Demo.API.AutoMapper
+namespace CodeDemo.API.AutoMapper
 {
     /// <summary>
     /// Automapper

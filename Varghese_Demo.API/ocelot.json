@@ -1,13 +1,13 @@
 {
   "Routes": [
     {
-      "DownstreamPathTemplate": "/api/values",
-      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/bank",
+      "DownstreamScheme": "https",
       "DownstreamHttpMethods": [ "POST" ],
       "DownstreamHostAndPorts": [
         {
-          "Host": "varghesechandy-001-site1.atempurl.com",
-          "Port": "80"
+          "Host": "bankmockapi.azurewebsites.net",
+          "Port": "443"
         }
       ],
       "UpstreamPathTemplate": "/processpayment",
@@ -17,7 +17,7 @@
       "HttpHandlerOptions": {
         "AllowAutoRedirect": true
       }
-    } 
+    }
   ],
 
   "GlobalConfiguration": {

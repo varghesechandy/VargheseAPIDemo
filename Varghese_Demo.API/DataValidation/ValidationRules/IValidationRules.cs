@@ -1,6 +1,6 @@
-﻿using Varghese_Demo.API.Cryptography;
+﻿using CodeDemo.API.Cryptography;
 
-namespace Varghese_Demo.API.DataValidation.ValidationRules
+namespace CodeDemo.API.DataValidation.ValidationRules
 {
     internal interface IValidationRules
     {

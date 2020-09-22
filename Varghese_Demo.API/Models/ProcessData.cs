@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Varghese_Demo.API.Models
+namespace CodeDemo.API.Models
 {
     /// <summary>
     /// This information must be submitted to the payment gateway

@@ -5,17 +5,17 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["Varghese_Demo.API/Varghese_Demo.API.csproj", "Varghese_Demo.API/"]
-RUN dotnet restore "Varghese_Demo.API/Varghese_Demo.API.csproj"
+COPY ["CodeDemo.API/CodeDemo.API.csproj", "CodeDemo.API/"]
+RUN dotnet restore "CodeDemo.API/CodeDemo.API.csproj"
 COPY . . 
-WORKDIR "/src/Varghese_Demo.API"
-RUN dotnet build "Varghese_Demo.API.csproj" -c Release -o /app/build
+WORKDIR "/src/CodeDemo.API"
+RUN dotnet build "CodeDemo.API.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Varghese_Demo.API.csproj" -c Release -o /app/publish
+RUN dotnet publish "CodeDemo.API.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 EXPOSE 12121
-ENTRYPOINT ["dotnet", "Varghese_Demo.API.dll"]
+ENTRYPOINT ["dotnet", "CodeDemo.API.dll"]

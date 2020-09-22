@@ -1,8 +1,8 @@
 ﻿using System.Net;
 using System.Net.Http; 
-using Varghese_Demo.API.Models;
+using CodeDemo.API.Models;
 
-namespace Varghese_Demo.API.AuthenticationService
+namespace CodeDemo.API.AuthenticationService
 {
     /// <summary>
     /// Interface for Authentication Service

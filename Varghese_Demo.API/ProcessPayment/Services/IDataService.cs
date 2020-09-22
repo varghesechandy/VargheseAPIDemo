@@ -1,7 +1,7 @@
 ﻿using System.Net.Http;
-using Varghese_Demo.API.Models;
+using CodeDemo.API.Models;
 
-namespace Varghese_Demo.API.ProcessPayment.DataService
+namespace CodeDemo.API.ProcessPayment.DataService
 {
     internal interface IDataService
     {

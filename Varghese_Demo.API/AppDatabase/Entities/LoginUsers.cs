@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations; 
 
-namespace Varghese_Demo.API.AppDatabase.Entities
+namespace CodeDemo.API.AppDatabase.Entities
 {
     /// <summary>
     /// Database entity for user information

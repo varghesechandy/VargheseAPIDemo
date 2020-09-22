@@ -3,7 +3,7 @@ using Moq;
 using System.Text; 
 using Xunit;
 
-namespace Varghese_Demo.API_TEST
+namespace CodeDemo.API_TEST
 {
     public class CryprographyTest
     {

@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System; 
 using System.Linq;
-using Varghese_Demo.API.AppDatabase.DatabaseContext;
-using Varghese_Demo.API.AppDatabase.Entities;
-using Varghese_Demo.API.Models;
-using Varghese_Demo.API.Pagination;
+using CodeDemo.API.AppDatabase.DatabaseContext;
+using CodeDemo.API.AppDatabase.Entities;
+using CodeDemo.API.Models;
+using CodeDemo.API.Pagination;
 
-namespace Varghese_Demo.API.AppDatabase.PaymentProcessRepository
+namespace CodeDemo.API.AppDatabase.PaymentProcessRepository
 {
     /// <summary>
     /// The actual implimentaion of database operations

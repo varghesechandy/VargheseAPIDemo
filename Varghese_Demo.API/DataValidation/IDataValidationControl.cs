@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
-using Varghese_Demo.API.Models;
+using CodeDemo.API.Models;
 
-namespace Varghese_Demo.API.DataValidation
+namespace CodeDemo.API.DataValidation
 {
     internal interface IDataValidationControl
     {

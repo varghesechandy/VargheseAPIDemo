@@ -5,27 +5,27 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting; 
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
-using Varghese_Demo.API.DataValidation; 
-using Varghese_Demo.API.DelegatingHandlers; 
-using Varghese_Demo.API.ProcessPayment.DataValidation;
-using Varghese_Demo.API.ProcessPayment.DataService;
-using Varghese_Demo.API.AppDatabase.PaymentProcessRepository;
+using CodeDemo.API.DataValidation; 
+using CodeDemo.API.DelegatingHandlers; 
+using CodeDemo.API.ProcessPayment.DataValidation;
+using CodeDemo.API.ProcessPayment.DataService;
+using CodeDemo.API.AppDatabase.PaymentProcessRepository;
 using AutoMapper;
-using Varghese_Demo.API.AutoMapper; 
+using CodeDemo.API.AutoMapper; 
 using Microsoft.OpenApi.Models;
-using Varghese_Demo.API.Models;
+using CodeDemo.API.Models;
 using System.Text; 
 using Microsoft.IdentityModel.Tokens;
-using Varghese_Demo.API.AuthenticationService;
+using CodeDemo.API.AuthenticationService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Prometheus; 
-using Varghese_Demo.API.Cryptography;
-using Varghese_Demo.API.AppMetrics;
+using CodeDemo.API.Cryptography;
+using CodeDemo.API.AppMetrics;
 using Varghese_PaymentGateway.Filters.API;
-using Varghese_Demo.API.AppDatabase.DatabaseContext;
-using Varghese_Demo.API.AppDatabase.UsersRepository;
+using CodeDemo.API.AppDatabase.DatabaseContext;
+using CodeDemo.API.AppDatabase.UsersRepository;
 
-namespace Varghese_Demo.API
+namespace CodeDemo.API
 {
     /// <summary>
     /// 
@@ -56,6 +56,7 @@ namespace Varghese_Demo.API
             {
                 mc.AddProfile(new PaymentProcessProfile());
             });
+
             IMapper mapper = mappingConfig.CreateMapper();
 
             services.AddSingleton(mapper);
@@ -113,7 +114,7 @@ namespace Varghese_Demo.API
                       new string[] { }
                     }
                   });
-                c.IncludeXmlComments(System.AppDomain.CurrentDomain.BaseDirectory + @"Varghese_Demo.API.xml"); 
+                c.IncludeXmlComments(System.AppDomain.CurrentDomain.BaseDirectory + @"CodeDemo.API.xml"); 
             });
 
             //JWT Authentication

@@ -4,12 +4,12 @@ using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using Varghese_Demo.API.AppMetrics;
-using Varghese_Demo.API.Models;
-using Varghese_Demo.API.ProcessPayment.DataService;
-using Varghese_Demo.API.ProcessPayment.DataValidation;
+using CodeDemo.API.AppMetrics;
+using CodeDemo.API.Models;
+using CodeDemo.API.ProcessPayment.DataService;
+using CodeDemo.API.ProcessPayment.DataValidation;
 
-namespace Varghese_Demo.API.DelegatingHandlers
+namespace CodeDemo.API.DelegatingHandlers
 {
     /// <summary>
     /// The request to ocelot will be handled here before sending to acquiring bank

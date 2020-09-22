@@ -4,7 +4,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
 
-namespace Varghese_Demo.API
+namespace CodeDemo.API
 {
     /// <summary>
     /// 

@@ -1,14 +1,14 @@
 using System.Runtime.CompilerServices;
 using Xunit; 
 using System.Collections.Generic; 
-using Varghese_Demo.API.Models;
+using CodeDemo.API.Models;
 using Moq;
-using Varghese_Demo.API.Cryptography;
-using Varghese_Demo.API.AuthenticationService;
-using Varghese_Demo.API.DataValidation;
+using CodeDemo.API.Cryptography;
+using CodeDemo.API.AuthenticationService;
+using CodeDemo.API.DataValidation;
 
-[assembly: InternalsVisibleTo("Varghese_Demo.API_TEST")]
-namespace Varghese_Demo.API_TEST
+[assembly: InternalsVisibleTo("CodeDemo.API_TEST")]
+namespace CodeDemo.API_TEST
 {
     public class DataValidationControlTest
     {  

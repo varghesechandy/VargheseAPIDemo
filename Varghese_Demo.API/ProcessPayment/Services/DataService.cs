@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc; 
 using System.Net.Http;
 using System.Net; 
-using Varghese_Demo.API.Models;
-using Varghese_Demo.API.AppDatabase.PaymentProcessRepository;
+using CodeDemo.API.Models;
+using CodeDemo.API.AppDatabase.PaymentProcessRepository;
 using AutoMapper; 
-using Varghese_Demo.API.AppDatabase.Entities; 
+using CodeDemo.API.AppDatabase.Entities; 
 
-namespace Varghese_Demo.API.ProcessPayment.DataService
+namespace CodeDemo.API.ProcessPayment.DataService
 { 
     internal class DataService : IDataService
     {
@@ -31,7 +31,7 @@ namespace Varghese_Demo.API.ProcessPayment.DataService
             paymentRepository.AddPaymentProcessData(paymentProcessData, out string errorMessage);
 
             var errorResponse = new JsonResult(new { Id = paymentData.PaymentId, StatusCode =  paymentData.ResponseStatusCode, paymentData.Message });
-            return new HttpResponseMessage(HttpStatusCode.OK)
+            return new HttpResponseMessage(responseData != null ? HttpStatusCode.OK : HttpStatusCode.BadRequest)
             {
                 Content =
                 new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(errorResponse), System.Text.Encoding.UTF8,"application/json") 

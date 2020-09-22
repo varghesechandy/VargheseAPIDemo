@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic; 
 
-namespace Varghese_Demo.API.DataValidation
+namespace CodeDemo.API.DataValidation
 {
     /// <summary>
     /// Get all the validation constants

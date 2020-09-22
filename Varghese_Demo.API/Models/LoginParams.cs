@@ -1,4 +1,4 @@
-﻿namespace Varghese_Demo.API.Models
+﻿namespace CodeDemo.API.Models
 {
     /// <summary>
     /// To display appropriate fields for the login UI
